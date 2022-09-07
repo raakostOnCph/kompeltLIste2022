@@ -79,12 +79,22 @@ class ListeTest
     }
 
     @Test
-    void smatindsæt()
+    void smatindsæt_head()
     {
         assertEquals("hej",tomList.insertFromhead("hej").data);
         assertEquals("med",tomList.insertFromhead("med").data);
         tomList.insertFromhead("dig");
         assertEquals("hej med dig", tomList.printFromTail());
+
+    }
+
+    @Test
+    void smartInsertFromTail()
+    {
+        assertEquals("hej", tomList.insetFromTail("hej").data);
+        assertEquals("med",tomList.insetFromTail("med").data);
+        tomList.insetFromTail("dig");
+        assertEquals("hej med dig", tomList.printFromHead());
 
     }
 }

@@ -94,4 +94,10 @@ public class Liste
     {
         return insertFromhead(new Node(s));
     }
+
+    public Node insetFromTail(String s)
+    {
+        return insetFromTail(new Node(s));
+
+    }
 }
