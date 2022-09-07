@@ -1,3 +1,5 @@
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ListeTest
@@ -21,5 +23,15 @@ class ListeTest
         assertEquals("dig", liste.tail.previous.previous.data);
 
 
+    }
+
+    @Test
+    void printfromhead()
+    {
+         liste.insertFromhed(n);
+         liste.insertFromhed(n1);
+         liste.insertFromhed(n2);
+
+         assertEquals("dig med hej", liste.printFromHead());
     }
 }

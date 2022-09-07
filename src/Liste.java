@@ -24,4 +24,17 @@ public class Liste
     }
 
 
+    public String printFromHead()
+    {
+        Node n = head;
+        StringBuilder stringBuilder = new StringBuilder();
+
+        while (n != null) {
+
+            stringBuilder.append(n.data + " ");
+            n = n.next;
+        }
+
+        return stringBuilder.toString().trim();
+    }
 }
