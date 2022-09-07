@@ -11,6 +11,11 @@ class ListeTest
     Node n1 = new Node("med");
     Node n2 = new Node("dig");
 
+    Node b = new Node("hej");
+    Node b1 = new Node("med");
+    Node b2 = new Node("dig");
+
+
     @BeforeEach
     void setUp()
     {
@@ -46,6 +51,20 @@ class ListeTest
     {
         assertEquals("hej med dig", liste.printFromTail());
 
+
+    }
+
+    @Test
+    void indsætbagfra()
+    {
+
+        assertEquals("hej",liste.insetFromTail(b).data );
+        assertEquals("med",liste.insetFromTail(b1).data );
+        assertEquals("dig",liste.insetFromTail(b2).data );
+
+        assertEquals("dig",liste.tail.data);
+        assertEquals("med",liste.tail.previous.data);
+        assertEquals("hej",liste.tail.previous.previous.data);
 
     }
 }
