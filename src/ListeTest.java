@@ -5,8 +5,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ListeTest
 {
+    Liste fyldtListe = new Liste("hold da lige op mand hvor er her meget text ");
     Liste tomList = new Liste();
     Liste liste = new Liste();
+
     Node n = new Node("hej");
     Node n1 = new Node("med");
     Node n2 = new Node("dig");
@@ -95,6 +97,17 @@ class ListeTest
         assertEquals("med",tomList.insetFromTail("med").data);
         tomList.insetFromTail("dig");
         assertEquals("hej med dig", tomList.printFromHead());
+
+    }
+
+    @Test
+    void findeNode()
+    {
+        assertEquals(null, tomList.findeNode("palle"));
+
+        assertEquals("op", fyldtListe.findeNode("op").data);
+
+
 
     }
 }

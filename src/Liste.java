@@ -100,4 +100,21 @@ public class Liste
         return insetFromTail(new Node(s));
 
     }
+
+    public Node findeNode(String s)
+    {
+        Node n = head;
+
+        while (n != null) {
+
+            if (n.data.equalsIgnoreCase(s)) {
+                return n;
+            }
+                n = n.next;
+
+        }
+
+
+        return null;
+    }
 }
