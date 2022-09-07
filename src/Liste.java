@@ -8,7 +8,7 @@ public class Liste
         return head == null && tail == null;
     }
 
-    public Node insertFromhed(Node n) {
+    public Node insertFromhead(Node n) {
 
         if (isEmpty()) {
             head = n;
@@ -36,5 +36,22 @@ public class Liste
         }
 
         return stringBuilder.toString().trim();
+    }
+
+    public String printFromTail()
+    {
+        Node n = tail;
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+        while (n != null) {
+
+            stringBuilder.append(n.data + " ");
+
+            n = n.previous;
+
+        }
+        return stringBuilder.toString().trim();
+
     }
 }

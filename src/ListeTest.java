@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,13 +11,20 @@ class ListeTest
     Node n1 = new Node("med");
     Node n2 = new Node("dig");
 
+    @BeforeEach
+    void setUp()
+    {
+
+        liste.insertFromhead(n);
+        liste.insertFromhead(n1);
+        liste.insertFromhead(n2);
+    }
+
     @org.junit.jupiter.api.Test
     void insertFromhed()
     {
 
-        assertEquals("hej", liste.insertFromhed(n).data);
-        assertEquals("med", liste.insertFromhed(n1).data);
-        assertEquals("dig", liste.insertFromhed(n2).data);
+
 
         assertEquals("hej", liste.tail.data);
         assertEquals("med", liste.tail.previous.data);
@@ -28,10 +36,16 @@ class ListeTest
     @Test
     void printfromhead()
     {
-         liste.insertFromhed(n);
-         liste.insertFromhed(n1);
-         liste.insertFromhed(n2);
+
 
          assertEquals("dig med hej", liste.printFromHead());
+    }
+
+    @Test
+    void printFromTail()
+    {
+        assertEquals("hej med dig", liste.printFromTail());
+
+
     }
 }
