@@ -142,4 +142,21 @@ class ListeTest
 
 
     }
+
+    @Test
+    void removeNode()
+    {
+        assertEquals(null, tomList.removeNode("op"));
+
+        //"hold da lige op mand hvor er her meget text"
+        assertEquals("mand", fyldtListe.removeNode("mand").data);
+        assertEquals("hold da lige op hvor er her meget text", fyldtListe.printFromTail());
+        assertEquals("hold", fyldtListe.removeNode("hold").data);
+        assertEquals("da lige op hvor er her meget text",fyldtListe.printFromTail());
+
+        assertEquals("text", fyldtListe.removeNode("text").data);
+        assertEquals("da lige op hvor er her meget",fyldtListe.printFromTail());
+
+
+    }
 }
