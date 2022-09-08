@@ -27,6 +27,11 @@ public class Liste
         return head == null && tail == null;
     }
 
+    public boolean onlyOne() {
+
+        return head == tail && head != null;
+    }
+
     public Node insertFromhead(Node n) {
 
         if (isEmpty()) {
@@ -116,5 +121,31 @@ public class Liste
 
 
         return null;
+    }
+
+    public Node removeFromHead()
+    {
+        if (isEmpty()) {
+        return null;
+        }
+        if (onlyOne()) {
+
+            Node res = head;
+            head = null;
+            tail = null;
+            return res;
+
+        }
+
+        // der flere elementer en et i lisgten
+
+        Node res = head;
+
+        head = head.next;
+        head.previous.next = null;   // her slette jeg ref fra min gamle head til nye.
+        head.previous = null;   // det er min gamle head
+
+        return res;
+
     }
 }
