@@ -9,7 +9,7 @@ public class Liste
 
     public Liste(String s)
     {
-        String [] strings = s.split(" ");
+        String[] strings = s.split(" ");
 
         for (String string : strings) {
 
@@ -17,22 +17,23 @@ public class Liste
         }
 
 
-
     }
 
 
-
-    public boolean isEmpty() {
+    public boolean isEmpty()
+    {
 
         return head == null && tail == null;
     }
 
-    public boolean onlyOne() {
+    public boolean onlyOne()
+    {
 
         return head == tail && head != null;
     }
 
-    public Node insertFromhead(Node n) {
+    public Node insertFromhead(Node n)
+    {
 
         if (isEmpty()) {
             head = n;
@@ -115,7 +116,7 @@ public class Liste
             if (n.data.equalsIgnoreCase(s)) {
                 return n;
             }
-                n = n.next;
+            n = n.next;
 
         }
 
@@ -126,7 +127,7 @@ public class Liste
     public Node removeFromHead()
     {
         if (isEmpty()) {
-        return null;
+            return null;
         }
         if (onlyOne()) {
 
@@ -148,4 +149,35 @@ public class Liste
         return res;
 
     }
+
+
+    public Node removeFromTail()
+    {
+        if (isEmpty()) {
+            return null;
+        }
+
+
+        if (onlyOne()) {
+
+            Node res = head;
+
+            head = null;
+            tail = null;
+
+            return res;
+
+
+
+        }
+
+        Node res = tail;
+
+        tail = tail.previous; // flytter tail frem i listen til næste sidte knude
+        tail.next.previous = null; // fjerne ref fra gammel tail til nu;
+        tail.next = null;     // fjerne ref fra ny tail til gammel tail.
+        return res;
+    }
+
+
 }

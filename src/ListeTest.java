@@ -125,4 +125,21 @@ class ListeTest
             assertEquals("hold da lige op mand hvor er her meget", fyldtListe.printFromTail());
 
     }
+
+    @Test
+    void removeFromTail()
+    {
+        assertEquals(null, tomList.removeFromTail());
+
+        tomList.insetFromTail("hej");
+        assertEquals("hej", tomList.removeFromTail().data);
+        assertEquals(true, tomList.isEmpty());
+
+
+        fyldtListe.removeFromTail();
+        assertEquals("da lige op mand hvor er her meget text", fyldtListe.printFromTail());
+
+
+
+    }
 }
